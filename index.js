@@ -91,16 +91,16 @@ OctoPrint.prototype = {
             callback(1);
         } else {
             console.log("Stopping print.");
-            var options = {
-                method: 'POST',
-                uri: this.server + '/api/job',
-                headers: {
-                    "X-Api-Key": this.apiKey
-                },
-                body: {
-                    "command": "cancel"
-                },
-                json: true
+            // var options = {
+            //     method: 'POST',
+            //     uri: this.server + '/api/job',
+            //     headers: {
+            //         "X-Api-Key": this.apiKey
+            //     },
+            //     body: {
+            //         "command": "cancel"
+            //     },
+            //     json: true
             };
             ReqP(options).then(function(printState) {
                 console.log("Print stopped successfully.")
