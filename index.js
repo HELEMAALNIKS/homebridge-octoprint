@@ -89,27 +89,7 @@ OctoPrint.prototype = {
         if (value == 1) {
             console.log("You cannot start a print with homekit.");
             callback(1);
-        } else {
-            console.log("Stopping print.");
-            // var options = {
-            //     method: 'POST',
-            //     uri: this.server + '/api/job',
-            //     headers: {
-            //         "X-Api-Key": this.apiKey
-            //     },
-            //     body: {
-            //         "command": "cancel"
-            //     },
-            //     json: true
-            };
-            ReqP(options).then(function(printState) {
-                console.log("Print stopped successfully.")
-                callback(null);
-            })
-            .catch(function(error) {
-                callback(error);
-            });
-        }
+        } 
     },
 
     /*
